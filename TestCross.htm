@@ -1,0 +1,26 @@
+﻿<html>
+<head>
+    <title>Untitled Page</title>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+        $.ajax({
+            type: "get",
+            dataType:"xml",
+            url: "http://localhost:8077/Service1.asmx/HelloWorld",
+            success: function (result) {
+                if (result != null && result != undefined) {
+                   var data= result.documentElement.textContent;
+                   alert(data);
+               }
+            },  
+            error: function (error) {
+                alert("1");
+                alert(error);
+            }
+
+        });
+    </script>
+</head>
+<body>
+</body>
+</html>
